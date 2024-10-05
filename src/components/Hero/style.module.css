@@ -1,0 +1,145 @@
+.list {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+  color: white;
+}
+section {
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 170px;
+  justify-content: center;
+  padding: 20px 0 0 100px;
+}
+
+.title {
+  font-size: 80px;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.logosInner {
+  display: flex;
+  gap: 21px;
+}
+.langugageInner {
+  display: flex;
+  position: relative;
+  gap: 6px;
+}
+.languageArrow::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../../static/languageArrow.svg);
+  background-size: cover;
+  height: 10px;
+  width: 16px;
+  margin-top: 4px;
+  transform: rotate(-90deg);
+}
+.languageArrow2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../../static/languageArrow.svg);
+  background-size: cover;
+  height: 10px;
+  width: 16px;
+  margin-top: 4px;
+}
+.language {
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+}
+.language:hover {
+  cursor: pointer;
+  font-size: 15px;
+  color: rgb(250, 195, 195);
+}
+.languageArrow {
+  height: 8px;
+  width: 16px;
+  margin-top: 4px;
+}
+.languageArrow2 {
+  height: 8px;
+  width: 16px;
+  margin-top: 4px;
+}
+
+.text {
+  font-size: 24px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.languagesChangeNone{
+  display: none;
+}
+.languagesChange {
+  width: 82%;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  backdrop-filter: blur(1px);
+}
+.smallButton {
+  font-size: 12px;
+  border: none;
+  background-color: #010101;
+  color: white;
+  width: 54px;
+  height: 21.8px;
+  cursor: pointer;
+  text-align: start;
+  padding-left: 6px;
+}
+.smallButton:hover{
+  color:  #FFB548;
+}
+.buttonInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn {
+  width: 260px;
+  height: 60px;
+  background-color: rgba(255, 181, 72, 1);
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 120px;
+}
+
+.main {
+  padding-top: 250px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footertext {
+  color: white;
+  margin-bottom: 3px;
+}
