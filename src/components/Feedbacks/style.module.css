@@ -1,0 +1,258 @@
+.section {
+  background-size: cover;
+  background: radial-gradient(
+    54.59% 55.42% at 40.14% 44.6%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0) 38.28%,
+    #010101 99.74%
+  );
+}
+.container {
+  max-width: 1240px;
+  width: 100%;
+  padding: 0 5px;
+  margin: 0 auto;
+}
+.about {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.smallTitle,
+.title,
+.description {
+  color: white;
+}
+.smallTitle {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  padding-top: 250px;
+  margin-bottom: 9px;
+}
+.title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.description {
+  font-size: 18px;
+  max-width: 300px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+.btn__inner {
+  display: flex;
+  justify-content: center;
+}
+.btn,
+.btn__read {
+  width: 260px;
+  height: 60px;
+  background-color: #ffb548;
+  font-size: 16px;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+.btn {
+  width: 150px;
+  font-size: 16px;
+}
+.btnMain {
+  display: none;
+}
+.btn:hover,
+.btn__read:hover {
+  font-size: 17px;
+  color: grey;
+}
+.comments__section {
+  position: absolute;
+  z-index: 1;
+  background-color: grey;
+  height: 100vh;
+  width: 100%;
+}
+.comments__sectionNone {
+  display: none;
+}
+.buttons__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.btn__close {
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 1000;
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: green;
+  margin-bottom: 30px;
+}
+.btn__close:hover {
+  background-color: red;
+}
+.comments__list {
+  margin-bottom: 5px;
+  list-style: none;
+}
+.global__list {
+  display: none;
+}
+.comments__item {
+  height: 200px;
+  background-color: rgb(54, 54, 54);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px 10px 0 10px;
+}
+.profile__innerG {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.profile__inner {
+  display: flex;
+  align-items: center;
+  gap: 23px;
+}
+.profile__name {
+  font-size: 22px;
+  color: #ffb548;
+  font-weight: 400;
+  position: relative;
+}
+.profile__name::before {
+  content: "";
+  position: absolute;
+  background-image: url(../../static/twitter_icon.svg);
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 18px;
+  left: 160px;
+}
+.profile__descr {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  opacity: 50%;
+}
+.comment {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 14px;
+  padding-left: 10px;
+}
+.date {
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 50%;
+  color: #ffffff;
+  padding-left: 10px;
+}
+@media screen and (min-width: 375px) {
+  .profile__innerG {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .comment {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .date {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .about__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 200px;
+    height: 60px;
+    font-size: 16px;
+  }
+  .profile__name {
+    font-size: 24px;
+  }
+  .profile__descr {
+    font-size: 18px;
+  }
+  .profile__name::before {
+    left: 200px;
+  }
+}
+@media screen and (min-width: 520px) {
+  .btn {
+    width: 260px;
+  }
+  .comments__item {
+    max-width: 466px;
+    width: 100%;
+  }
+  .profile__name::before {
+    left: 300px;
+  }
+  .comments__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .global__list {
+    display: none;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .global__list {
+    display: flex;
+    margin-top: 100px;
+    margin-right: 122px;
+  }
+  .comments__section,
+  .comments__sectionNone {
+    display: none;
+  }
+  .btn__read {
+    display: none;
+  }
+  .btnMain {
+    display: block;
+  }
+  .about__inner {
+    margin-left: 20px;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .about__inner {
+    margin-left: 60px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .comments__list {
+    padding-left: 148px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  .comments__item:nth-child(even) {
+    margin-right: 148px;
+  }
+}

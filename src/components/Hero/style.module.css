@@ -1,33 +1,145 @@
-.list {
-  display: flex;
-  gap: 50px;
-  list-style: none;
-  color: white;
+.menu__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute; /* Зробимо позицію абсолютною */
+  top: 20px; /* Розміщуємо хрестик зверху */
+  left: 20px; /* Розміщуємо хрестик зліва */
+  z-index: 3; /* Щоб хрестик був вище за сірий фон */
+  padding-right: 20px;
+  cursor: pointer;
 }
+.menu__btn .bar {
+  width: 30px;
+  height: 4px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  transition: 0.8s;
+}
+
+.menu__btn .bar:nth-child(2) {
+  top: calc(50% - 9px);
+}
+
+.menu__btn .bar:nth-child(3) {
+  top: calc(50% + 9px);
+}
+
+.menu__btn.active .bar:nth-child(1) {
+  display: none;
+}
+
+.menu__btn.active .bar:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu__btn.active .bar:nth-child(3) {
+  top: 50%;
+  transform: translate(-50%, 0%) rotate(-45deg);
+}
+
 section {
   background-size: cover;
   width: 100%;
   height: 100vh;
 }
-
-.hero {
+.list.active {
+  background-color: rgb(91, 86, 86);
+  z-index: 2;
+  width: 100%;
+  height: 100vh; /* Фон на весь екран */
+  position: fixed; /* Закріпимо фон на весь екран */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+  animation-name: iteman;
+  animation-duration: 1.5s;
   display: flex;
   align-items: center;
-  gap: 170px;
-  justify-content: center;
-  padding: 20px 0 0 100px;
+  padding-top: 100px;
 }
 
+.list.active a {
+  font-weight: 600;
+  font-size: 30px;
+  border-bottom: 1px solid white;
+  max-width: 80%;
+  padding: 8px;
+  /* animation-name: itemop; 
+    animation-duration: 2s;
+    animation-delay: 1.5s; 
+    animation-fill-mode: forwards; */
+}
+.item {
+  border-bottom: 1px solid white;
+}
+.item:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.list {
+  display: none;
+  gap: 60px;
+  list-style: none;
+  color: white;
+  font-size: 28px;
+}
+.hero {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding-top: 20px;
+}
+@keyframes iteman {
+  0% {
+    transform: translateX(
+      -100%
+    ); /* Початкова позиція - за межами екрану ліворуч */
+  }
+  100% {
+    transform: translateX(0); /* Кінцева позиція - на екрані */
+  }
+}
+.btn {
+  width: 210px;
+  height: 40px;
+  background-color: rgba(255, 181, 72, 1);
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.logo {
+  display: none;
+}
+.main {
+  padding-top: 250px;
+}
 .title {
-  font-size: 80px;
+  font-size: 24px;
   text-align: center;
   color: white;
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
 }
+
 .logosInner {
   display: flex;
   gap: 21px;
+  align-items: center;
 }
 .langugageInner {
   display: flex;
@@ -79,17 +191,18 @@ section {
 }
 
 .text {
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   display: flex;
   justify-content: center;
   padding-bottom: 20px;
+  text-align: center;
 }
-.languagesChangeNone{
+.languagesChangeNone {
   display: none;
 }
 .languagesChange {
-  width: 82%;
+  width: 55%;
   z-index: 1;
   display: none;
   position: absolute;
@@ -109,29 +222,13 @@ section {
   text-align: start;
   padding-left: 6px;
 }
-.smallButton:hover{
-  color:  #FFB548;
+.smallButton:hover {
+  color: #ffb548;
 }
 .buttonInner {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.btn {
-  width: 260px;
-  height: 60px;
-  background-color: rgba(255, 181, 72, 1);
-  border: none;
-  border-radius: 3px;
-  font-size: 16px;
-  font-weight: 700;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 120px;
-}
-
-.main {
-  padding-top: 250px;
 }
 
 .footer {
@@ -142,4 +239,102 @@ section {
 .footertext {
   color: white;
   margin-bottom: 3px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+.scrollDown {
+  animation: scroll ease 1s infinite;
+}
+@media screen and (min-width: 520px) {
+  .logo {
+    display: block;
+  }
+  .menu__btn {
+    top: 30px;
+  }
+  .title {
+    font-size: 25px;
+  }
+  .btn {
+    width: 260px;
+    height: 60px;
+    background-color: rgba(255, 181, 72, 1);
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+  .title {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .list {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    color: white;
+  }
+  .item {
+    border: none;
+    font-size: 15px;
+  }
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    justify-content: center;
+    /* padding: 20px 0 0 100px; */
+  }
+  .title {
+    font-size: 80px;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    width: 260px;
+    height: 60px;
+    background-color: rgba(255, 181, 72, 1);
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 120px;
+  }
+  /* .main {
+    padding-top: 250px;
+  } */
+  .menu__btn {
+    display: none;
+  }
+  .languagesChange {
+    width: 78%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hero {
+    gap: 170px;
+  }
 }
