@@ -1,0 +1,142 @@
+.features {
+    background-image: url(/src/static/bgimage3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: left top;
+    z-index: 1;
+  }
+  
+  .features::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  
+    background: radial-gradient(
+      circle,
+      rgba(63, 94, 251, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+  }
+  
+  .inner {
+    display: flex;
+    flex-direction: column;
+    max-width: 550px;
+    align-items: flex-start;
+  }
+  
+  .list h2 {
+    color: rgba(255, 181, 72, 1);
+    list-style: none;    
+  }
+  
+  .list {
+    color: white;
+    max-width: 450px;
+    list-style: none;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .title__text {
+    color: white;
+    font-size: 24px;
+    padding-bottom: 8px;
+    text-align: center;
+    width: 100%;
+    font-family: "Bebas Neue", sans-serif;
+  }
+  .mainTitle{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 36px;
+  }
+  .title {
+    color: white;
+    padding-bottom: 50px;
+    font-size: 80px;
+    font-weight: 300;
+    font-family: "Bebas Neue", sans-serif;
+    width: 100%;
+    text-align: center;
+  }
+  .item__text{
+    font-size: 18px;
+    text-align: center;
+  }
+  .aliens{
+    font-size: 20px;
+  }
+  @media (min-width: 992px) {
+    .item__text {
+      text-align: left;
+      font-size: 20px;
+      
+    }
+    .wrapper {
+      display: flex;
+      justify-content: flex-end;
+      height: 100vh;
+      align-items: center;
+    }
+    .inner {
+      display: flex;
+      flex-direction: column;
+      max-width: 550px;
+      align-items: flex-start;
+    }
+  
+    .title__text {
+      color: white;
+      font-size: 22px;
+      padding-bottom: 30px;
+      text-align: left;
+    }
+  
+    .title {
+      font-size: 60px;
+      text-align: left;
+    }
+    .list h2 {
+      color: rgba(255, 181, 72, 1);
+      list-style: none;
+      font-size: 30px;
+    }
+  
+    .list {
+      font-size: 15px;
+      gap: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .item__text {
+      text-align: left;
+      font-size: 15px;
+    }
+  }
