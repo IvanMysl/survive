@@ -64,3 +64,14 @@
         padding: 10px;
     }
 }
+@media screen and (max-width: 320px){
+p{
+  font-size: 15px;
+}
+.subtitle{
+  margin-bottom: 20px;
+}
+li{
+  margin-bottom: 2px;
+}
+}
